@@ -1,0 +1,29 @@
+<ion-view view-title="Favourites beers">
+
+    <ion-content class="">
+		
+		<ul class="list">
+			<li class="card" ng-repeat="beer in favs">
+				<div class="item item-avatar">
+					<img ng-src="{{beer.labels.icon || 'img/default-img.jpg'}}">
+					<h2>{{beer.nameDisplay}}</h2>
+					<p>
+						<span ng-if="beer.glass.name"><i class="icon ion-beer"></i> {{beer.glass.name}}</span>
+						<br ng-if="beer.glass.name && beer.abv">
+						<span ng-if="beer.abv"><i class="icon ion-android-walk"></i> {{beer.abv}}%</span>
+					</p>
+				</div>
+				<div class="item item-body">
+					<p>
+						{{beer.description}}
+					</p>
+					<ul>
+						<li><p><i class="icon ion-waterdrop"></i> {{beer.style.category.name}}</p></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+
+    </ion-content>
+
+</ion-view>

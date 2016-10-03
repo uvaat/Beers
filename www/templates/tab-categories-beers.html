@@ -1,0 +1,21 @@
+<ion-view view-title="{{catName}}">
+
+    <ion-content class="">
+		
+		<ion-list>
+			<ion-item class="item-avatar" collection-repeat="beer in beers" ui-sref="tab.categories_beer({ beerId: beer.id })">
+				<img ng-src="{{beer.labels.icon || 'img/default-img.jpg'}}">
+				<h2>{{beer.nameDisplay}}</h2>
+				<p>{{beer.description}}</p>
+			</ion-item>
+		</ion-list>
+
+		<ion-infinite-scroll
+			on-infinite="loadMore()"
+			immediate-check="false"
+			distance="1%">
+		</ion-infinite-scroll>
+	
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view view-title="Categories">
+
+    <ion-content class="">
+		
+		<ion-list>
+			<ion-item ng-repeat="cat in categories" ng-if="cat.name.length > 2" ui-sref="tab.categories_beers({ catName: cat.name })">
+				{{cat.name}}
+			</ion-item>
+		</ion-list>
+
+    </ion-content>
+
+</ion-view>
